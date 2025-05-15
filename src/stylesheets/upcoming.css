@@ -1,0 +1,86 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap);
+/*@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css);
+/**/@import url(modified-libs.css);
+/**/@import url(general.css);
+
+/* ------------- Upcoming ------------- */
+.upcoming {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #dfe3eb 100%), #FFFFFF;
+}
+.upcoming .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Add spacing between grid items */
+}
+.upcoming .row div {
+  width: 100%;
+}
+.upcoming h4, .upcoming .h4 {
+  text-align: center;
+  margin-bottom: 70px;
+  text-transform: capitalize;
+}
+.upcoming-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.upcoming-content-area {
+  width: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(223, 227, 235, 0.3)), to(rgba(223, 227, 235, 0.3))), #FFFFFF;
+  background: linear-gradient(0deg, rgba(223, 227, 235, 0.3), rgba(223, 227, 235, 0.3)), #FFFFFF;
+  border-radius: 6px;
+  padding: 24px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.upcoming-content-area .layer-svg {
+  margin-bottom: 60px;
+  width: 60px;
+  height: 60px;
+}
+.upcoming-content-area p {
+  color: #0A1931;
+  margin-bottom: 0;
+  min-height: 80px;
+  /*text-transform: capitalize !important;
+  text-transform: lowercase;*/
+}
+.upcoming-content-area p span {
+  text-align: center;
+  display: block;
+  font-size: 36px;
+}
+.upcoming-content-area:hover {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 20px 48px rgba(10, 25, 49, 0.09);
+          box-shadow: 0px 20px 48px rgba(10, 25, 49, 0.09);
+  border-radius: 6px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .upcoming-content-area p span {
+    font-size: 32px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .upcoming-content-area p span {
+    font-size: 26px;
+  }
+}
+@media (max-width: 575px) {
+  .upcoming {
+    padding: 50px 0;
+  }
+  .upcoming-text h4, .upcoming-text .h4 {
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 50px;
+  }
+  .upcoming-content-area p span {
+    font-size: 26px;
+  }
+}

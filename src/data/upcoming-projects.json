@@ -1,0 +1,204 @@
+{
+	"upcoming":
+	[
+		{
+			"odd": true,
+			"title": "To Be Here",
+			"link": "to-be-here",
+			"credit": "",
+			"role": "Daisy",
+			"description": "Exploring the effects of physically degenerative illnesses on mental health, TO BE HERE follows Daisy, a young woman who has watched her father, Benjie, cope with progressive physical deterioration for many years. Now that Benjie has reached the last stage of his illness, he and Daisy work together to reconcile their shared experiences versus how they hope to remember one another as they are confronted with the limit that time imposes."
+		},
+		{
+			"odd": false,
+			"title": "Death Sentence(s)",
+			"link": "death-sentences",
+			"credit": "\"Hartetest\" by derpoly is licensed under CC BY-SA 2.0.",
+			"role": "Author",
+			"description": "Halloween. The best time of year for pumpkins, candy, tricks, and... murder? The horror gets all too real when three friends discover a dead burglar in their front hallway. Truths are revealed and friendships are tested, but nothing can prepare the trio for the night that awaits them..."
+		}
+	],
+	"prior":
+	{
+		"videos":
+		[
+			{
+				"name": "To Be Here",
+				"link": "tgbNymZ7vqY"
+			}
+		],
+		"images":
+		[
+			{
+				"number": 1,
+				"display_home": true,
+				"img": "orcus-kills-monsters.jpg",
+				"show": "She Kills Monsters",
+				"role": "Orcus",
+				"director": "Caroline Colvin",
+				"year": "2022"
+			},
+			{
+				"number": 2,
+				"display_home": false,
+				"img": "naphtali-joseph-dreamcoat.jpg",
+				"show": "Joseph and the Amazing Technicolor Dreamcoat",
+				"role": "Naphtali",
+				"director": "Michael Unger",
+				"year": "2017"
+			},
+			{
+				"number": 3,
+				"display_home": false,
+				"img": "anne-marie-dolls-house2.jpg",
+				"show": "A Doll's House, Part 2",
+				"role": "Anne Marie",
+				"director": "James Glossman",
+				"year": "2022"
+			},
+			{
+				"number": 4,
+				"display_home": true,
+				"img": "mortimer-baskervilles1.jpg",
+				"show": "The Hound of the Baskervilles",
+				"role": "Dr. Mortimer",
+				"director": "James Glossman",
+				"year": "2020"
+			},
+			{
+				"number": 5,
+				"display_home": false,
+				"img": "franklin-liberty-smith.jpg",
+				"show": "Liberty Smith",
+				"role": "Benjamin Franklin",
+				"director": "Michael Unger",
+				"year": "2015"
+			},
+			{
+				"number": 6,
+				"display_home": false,
+				"img": "lophakin-cherry-orchard.jpg",
+				"show": "The Cherry Orchard",
+				"role": "Lophakin",
+				"director": "James Glossman",
+				"year": "2023"
+			},
+			{
+				"number": 7,
+				"display_home": false,
+				"img": "priuli-galileo.jpg",
+				"show": "Galileo",
+				"role": "Curator Priuli",
+				"director": "James Glossman",
+				"year": "2024"
+			},
+			{
+				"number": 8,
+				"display_home": true,
+				"img": "cogsworth-beauty-beast.jpg",
+				"show": "Beauty and the Beast",
+				"role": "Cogsworth",
+				"director": "Jim Tornatore",
+				"year": "2017"
+			},
+			{
+				"number": 9,
+				"display_home": false,
+				"img": "anne-marie-dolls-house1.jpg",
+				"show": "A Doll's House, Part 2",
+				"role": "Ann Marie",
+				"director": "James Glossman",
+				"year": "2022"
+			},
+			{
+				"number": 10,
+				"display_home": false,
+				"img": "roosevelt-newsies.jpg",
+				"show": "Newsies",
+				"role": "Teddy Roosevelt",
+				"director": "Michael Unger",
+				"year": "2018"
+			},
+			{
+				"number": 11,
+				"display_home": false,
+				"img": "polonius-hamlet.jpg",
+				"show": "Hamlet",
+				"role": "Polonius",
+				"director": "Owen Welsh / Gerrad Taylor",
+				"year": "2021"
+			},
+			{
+				"number": 12,
+				"display_home": false,
+				"img": "mortimer-baskervilles2.jpg",
+				"show": "The Hound of The Baskervilles",
+				"role": "Dr. Mortimer",
+				"director": "James Glossman",
+				"year": "2020"
+			},
+			{
+				"number": 13,
+				"display_home": true,
+				"img": "zorb-nti-showcase1.jpg",
+				"show": "NTI Fall '22 Company Project",
+				"role": "Zorb",
+				"director": "Assorted",
+				"year": "2022"
+			},
+			{
+				"number": 14,
+				"display_home": false,
+				"img": "zorb-nti-showcase2.jpg",
+				"show": "NTI Fall '22 Company Project",
+				"role": "Zorb",
+				"director": "Assorted",
+				"year": "2022"
+			}
+		]
+	},
+	"reviews":
+	[
+		{
+			"name": "Peter Filichia",
+			"person_information": "NYC theater critic/ Host of annual Theatre World Awards",
+			"photo": "peter-filichia",
+			"role": "Ben Franklin",
+			"show": "Liberty Smith",
+			"description": "At intermission, I corralled Unger to say how thrilled I was thus far. \"And that kid playing Ben Franklin!\" I exuded. \"You must have been so thrilled the moment he walked through the door!\" \"SHE,\" he corrected. And indeed the program revealed that a Melissa Shohet was playing ol' Ben. The excellent performer could have fooled me - and did."
+		},
+		{
+			"name": "Forrest McClendon",
+			"person_information": "Award-winning performer, pedagogue, and theater-maker",
+			"photo": "forrest-mcclendon",
+			"role": "Letty Cottin Pogrebin",
+			"show": "Fires in the Mirror",
+			"description": "Revelatory - moving and mesmerizing."
+		},
+		{
+			"name": "Cloteal L. Horne",
+			"person_information": "Acclaimed storyteller and educator",
+			"photo": "cloteal-horne",
+			"role": "Sorin",
+			"show": "The Seagull",
+			"description": "It is the mark of a wonderful artist when they can etch out a role and give it full humanity, and you did that with Sorin. Your physical work communicated an extraordinary amount of information, and you anchored this scene in honest and liberating ways."
+		},
+		{
+			"name": "Dylan Kwang",
+			"person_information": "JHU Newsletter",
+			"photo": "jhu-newsletter",
+			"role": "Dr. Mortimer",
+			"show": "The Hound of the Baskervilles",
+			"description": "Melissa Shohet stole almost every scene. Her hilariously dramatic account of the Baskerville curse had the audience in stitches."
+		}
+	],
+	"contact":
+	{
+		"form_header": "Fill out this handy form...",
+		"info_header": "...Or contact me directly!",
+		"address": "Arlington, VA - DMV local",
+		"phone": "(203) 470 - 7095",
+		"email": "melissashohetacts@gmail.com",
+		"web3forms_apikey": "e8f6aeb7-8178-4717-8b9a-858fa8508183"
+	}
+}

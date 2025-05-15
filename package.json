@@ -14,9 +14,12 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@types/events": "^3.0.3",
+    "@types/node": "^22.14.1",
     "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "express": "^4.21.2",
     "file-loader": "^4.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-loader": "^3.0.0",
@@ -35,6 +38,14 @@
   ],
   "dependencies": {
     "bootstrap": "^5.0.0-beta1",
-    "node-sass": "^4.14.1"
+    "dompurify": "^3.2.4",
+    "ehtml": "^1.0.21",
+    "eventemitter3": "^2.0.3",
+    "events": "^3.3.0",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2",
+    "sass": "^1.14.1"
   }
 }

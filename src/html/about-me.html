@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ABOUT -- MELISSA SHOHET</title>
+    <link rel="stylesheet" href="static/stylesheets/header.css">
+    <link rel="stylesheet" href="static/stylesheets/about.css">
+    <link rel="stylesheet" href="static/stylesheets/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" />
+    <script>
+        function scrollToTop(){
+            window.scrollTo(0, 0);
+        }
+    </script>
+    <script>
+        function toggleVisibilityWId(elementId){
+            var x = document.getElementById(elementId);
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+        }
+    </script>
+</head>
+<body>
+
+
+    <!-- Header Section Starts Here-->
+    <section class="header">
+        <div class="container">
+            <div class="header-content">
+                <nav class="header-content navbar navbar-expand-md bg-white navbar-white">
+                    <!-- Brand -->
+                    <a class="navbar-brand logo" href="#">
+                        <img src="static/assets/images/logo.png" alt="logo">
+                    </a>
+
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" onclick='toggleVisibilityWId("collapsibleNavbar")'>
+                        <span class="navbar-toggler-icon" />
+                    </button>
+
+                    <!-- Horizontal spacing -->
+                    <div class="horiz-space" />
+
+                    <!-- Navbar links -->
+                    <div class="header-content-menu collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about-me">Biography</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/upcoming-projects">Upcoming</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/media-gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact-me">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!-- Header Section Ends Here-->
+
+
+    <!-- About Section Starts Here-->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="about-content-left">
+                            <img class="about-img" src="static/assets/images/about.png" alt="about-img">
+                            <img class="about-white-shadow" src="static/assets/images/about-white-shadow.png" alt="shadow">
+                            <img class="about-black-dot" src="static/assets/images/black-dot.png" alt="dot-shape">
+                            <img class="lg-round-shape" src="static/assets/images/lg-round-shape.png" alt="shape">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="about-content-right">
+                            <h3 class="font-md">"...Melissa seeks to tell
+                             important stories with laughter and heart, whether it be by acting, writing,
+                             directing, or composing..."</h3>
+                            <p class="para-2">Melissa found acting at a young age, and along the way has
+                             had the good fortune to work and learn alongside Broadway staples and regional
+                             titans. Inspired by her multi-hyphenate mentors, Melissa seeks to tell
+                             important stories with laughter and heart, whether it be by acting, writing,
+                             directing, or composing - whatever the specific project requires. She believes
+                             collaboration and specificity are key, bringing both to every room she's in.
+                             </br>
+                             Her most recent projects include 
+                             <span>To Be Here </span>(Lead - Short Film), and Brecht's <span>Galileo</span> (Curator Priuli).
+                            </p>
+                            </br>
+                            <a href="/contact-me" class="btn btn--primary">
+                                say hi             
+                                <svg width="33" height="24" viewBox="0 0 33 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31 12.025H1" stroke="#DFE3EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M25.9502 6.00006L32.0002 12.0241L25.9502 18.0491" stroke="#DFE3EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>    
+                            </a>
+                            <a onclick='toggleVisibilityWId("resume")' class="btn btn--secondary">
+                                Show/Hide Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="resume">
+            <div class="about-content resume">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 resume-button">
+                        <a href="https://drive.usercontent.google.com/u/0/uc?id=1ysuI4fAX0LYtzEZBvJUdxM3SBSZkBGhV&export=download" download="Melissa_Shohet_Headshot_Resume.pdf" class="btn btn--primary">
+                            Download Resume
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 resume-img">
+                        <img src="static/assets/images/resume.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section Ends Here-->
+
+
+   
+
+    <!-- Footer  Section Starts Here-->
+    <div class="footer">
+        <a class="font-xl" id="backtoTop" onclick="scrollToTop()"href="#">
+            <span>&uarr;Back to Top</span>
+        </a>
+        <div class="container">
+            <div class="footer-text">
+                <h4>&copy 2021 - Albert Flores. Original design by <a href="https://github.com/templatecookie/albert-html">Templatecookie</a>.
+                Website redesign by Melissa Shohet.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <!-- Footer  Section Ends Here-->
+
+</body>
+</html>

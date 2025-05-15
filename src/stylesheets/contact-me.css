@@ -1,0 +1,265 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap);
+/*@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css);
+/**/@import url(modified-libs.css);
+/**/@import url(general.css);
+
+/* ------------- Contact ------------- */
+.elm-error {
+    border: 1px solid red;
+}
+
+.message-error {
+    color: red;
+}
+
+.form-message-error {
+    text-align: center;
+    color: red;
+    font-family: sans-serif;
+}
+
+.contact {
+  padding: 100px 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), #DFE3EB;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), #DFE3EB;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.contact-area-info {
+  padding: 48px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 12px 24px rgba(10, 25, 49, 0.02);
+          box-shadow: 0px 12px 24px rgba(10, 25, 49, 0.02);
+}
+.contact-area-info h3, .contact-area-info .h3 {
+  color: #0A1931;
+  margin-bottom: 24px;
+}
+.contact-area-info .contact-form form .top-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact-area-info .contact-form form .top-input input:last-child {
+  margin-left: 16px;
+}
+.contact-area-info .contact-form form input {
+  padding: 14px 0 14px 20px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #DFE3EB;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: capitalize;
+}
+.contact-area-info .contact-form form textarea {
+  padding: 14px 0 0 20px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  width: 100%;
+  height: 152px;
+  border: 1px solid #DFE3EB;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.contact-area-location {
+  padding: 48px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 12px 24px rgba(10, 25, 49, 0.02);
+          box-shadow: 0px 12px 24px rgba(10, 25, 49, 0.02);
+  position: relative;
+}
+.contact-area-location h3, .contact-area-location .h3 {
+  color: #0A1931;
+  margin-bottom: 30px;
+  margin-top: 18px;
+}
+.contact-area-location .contact-location-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+.contact-area-location .contact-location-icon .location-text {
+  margin-left: 16px;
+}
+.contact-area-location .contact-location-icon .location-text span {
+  color: #0A1931;
+}
+.contact-area-location .contact-location-icon .location-text p {
+  color: #0A1931;
+  margin-bottom: 0;
+}
+.contact-area-location .bottom-social-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contact-area-location .bottom-social-icon .social {
+  margin-right: 12px;
+}
+.contact-area-location .bottom-social-icon .social:last-child {
+  margin-right: 0;
+}
+.contact .round-shape {
+  position: absolute;
+  bottom: 53px;
+  right: 180px;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+.contact .lg-round-shape {
+  position: absolute;
+  top: -285px;
+  left: 0;
+  opacity: 0.5;
+  z-index: -2;
+  pointer-events: none;
+}
+.contact .black-dot {
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-area-info {
+    margin-bottom: 20px;
+  }
+  .contact-area-info .contact-form {
+    text-align: center;
+  }
+  .contact-area-info .contact-form form .top-input {
+    display: inline-block;
+    width: 100%;
+  }
+  .contact-area-info .contact-form form .top-input input:last-child {
+    margin-left: 0;
+  }
+  .contact-area-location .black-dot {
+    top: 0;
+    right: 0;
+  }
+}
+@media (min-width: 575px) and (max-width: 767px) {
+  .contact-area-info {
+    margin-bottom: 20px;
+  }
+  .contact-area-info .contact-form {
+    text-align: center;
+  }
+  .contact-area-info .contact-form form .top-input {
+    display: inline-block;
+    width: 100%;
+  }
+  .contact-area-info .contact-form form .top-input input:last-child {
+    margin-left: 0;
+  }
+  .contact-area-location .black-dot {
+    top: 0;
+    right: 0;
+  }
+}
+@media (max-width: 574px) {
+  .contact {
+    padding: 50px 0;
+  }
+  .contact .contact-area-info {
+    margin-bottom: 20px;
+    padding: 24px;
+  }
+  .contact .contact-area-info h3, .contact .contact-area-info .h3 {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .contact .contact-area-info .contact-form {
+    text-align: center;
+  }
+  .contact .contact-area-info .contact-form form .top-input {
+    display: inline-block;
+    width: 100%;
+  }
+  .contact .contact-area-info .contact-form form .top-input input:last-child {
+    margin-left: 0;
+  }
+  .contact .contact-area-info .contact-form form .btn--primary {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .contact .contact-area-location {
+    padding: 24px;
+  }
+  .contact .contact-area-location h3, .contact .contact-area-location .h3 {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .contact .contact-area-location .black-dot {
+    display: none;
+  }
+  .contact .contact-area-location .contact-location-icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .contact-area-location .contact-location-icon .social-lg-round {
+    width: 60px;
+    height: 60px;
+  }
+  .contact .contact-area-location .bottom-social-icon {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact .contact-area-location .bottom-social-icon .social {
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+  .contact .contact-area-location .bottom-social-icon .social-sm-round {
+    margin-right: 0;
+    border-radius: 0px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+  .contact .contact-area-location .contact-location-icon .location-text {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+  .contact .contact-area-location .contact-location-icon .location-text span {
+    font-size: 16px;
+  }
+  .contact .contact-area-location .contact-location-icon .location-text p {
+    font-size: 16px;
+  }
+}
