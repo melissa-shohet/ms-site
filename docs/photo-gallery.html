@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHOTO FLIPPER -- MELISSA SHOHET</title>
-    <link rel="stylesheet" href="static/stylesheets/header.css">
-    <link rel="stylesheet" href="static/stylesheets/footer.css">
-    <link rel="stylesheet" href="static/stylesheets/prior.css">
-    <link rel="stylesheet" href="static/stylesheets/photo-gallery.css">
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
+    <link rel="stylesheet" href="stylesheets/prior.css">
+    <link rel="stylesheet" href="stylesheets/photo-gallery.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ehtml@1.0.21/ehtml.bundle.min.js" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js" />
@@ -137,7 +137,7 @@
 </head>
 <body>
 <template is="e-json" 
-    data-src="/resources/data/upcoming-projects.json" 
+    data-src="json/upcoming-projects.json" 
     data-object-name="response">
 
     <!-- Previous Images Section Starts Here-->
@@ -163,7 +163,7 @@
                             onmouseover="toggleScaleWId('img${images.number}')"
                             onmouseout="toggleScaleWId('img${images.number}')"
                             onmousemove="onMouseMove('img${images.number}')"-->
-                                <img id="myimage" src="static/assets/images/${images.img}">
+                                <img id="myimage" src="images/${images.img}">
                             </div>
                             <!--<script>
                                 /* Initiate Magnify Function
@@ -171,7 +171,7 @@
                                 magnify("myimage", 3);
                             </script>
 		                    <!--<div class="img-div">
-                                <img src="static/assets/images/${images.img}">
+                                <img src="images/${images.img}">
                             </div>-->
                             <div class="role-text right">
                                 <p style="background: rgb(0,0,0,.5);">
@@ -186,7 +186,7 @@
             </ul>
             <!-- <div class="black-bg" style="min-width: calc(var(--cover-size) * ${response.body.prior.images.length * 2});" />-->
         </div>
-        <a href="/media-gallery#image-gallery" style="position: absolute; top: 0%; right: 2%;">
+        <a href="media-gallery#image-gallery" style="position: absolute; top: 0%; right: 2%;">
             <button type="button" aria-label="Close"
             class="btn-close btn-close-white">
             </button>

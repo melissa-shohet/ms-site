@@ -19,14 +19,6 @@ Check the [Live Demo here](https://albert-personal-portfolio.netlify.app/).
 - isotope
 - jQuery
 
-## Credits
-- Design & Developed by [Templatecookie](https://templatecookie.com)
-
-## License
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-# Webpack Boilerplate
-This repository contains Webpack and SCSS boilerplate code to quickly get started on building a webpage following a simplified version of SASS (7-1 pattern).
 
 
 ## Project Setup
