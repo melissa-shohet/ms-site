@@ -1,0 +1,180 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap);
+/*@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css);
+/**/@import url(modified-libs.css);
+/**/@import url(general.css);
+
+/* ------------- Review ------------- */
+.carousel-button.active, .carousel-button:active {
+    background: rgba(223, 227, 235, 0.6);
+}
+.carousel-role {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.review {
+  padding: 100px 0;
+}
+.review-content h3, .review-content .h3 {
+  text-align: center;
+  color: #0A1931;
+  margin-bottom: 70px;
+}
+.review-content-left .review-person-area {
+  margin-bottom: 10px;
+  border: none;
+}
+.review-person-area {
+  width: 100%;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.review-person-area:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(223, 227, 235, 0.3)), to(rgba(223, 227, 235, 0.3))), #FFFFFF;
+  background: linear-gradient(0deg, rgba(223, 227, 235, 0.3), rgba(223, 227, 235, 0.3)), #FFFFFF;
+  border-radius: 4px;
+}
+.review-person-area .review-person-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.review-person-area .review-person-content .person-img {
+  /*overflow: hidden;*/
+  margin-right: 16px;
+}
+.person-img img {
+    --review-img-width: 75px;
+    width: var(--review-img-width);
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.review-person-area .review-person-content .person-text .name {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #0A1931;
+  margin-bottom: 4px;
+}
+.review-person-area .review-person-content .person-text .title-name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #737D8C;
+}
+.review-person-area .review-person-content .person-text .title-name span {
+  color: #684FFF;
+}
+.review-content-left .review-person-area:nth-last-child(1) {
+  margin-bottom: 0px;
+}
+.review-content-right {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(223, 227, 235, 0.3)), to(rgba(223, 227, 235, 0.3))), #FFFFFF;
+  background: linear-gradient(0deg, rgba(223, 227, 235, 0.3), rgba(223, 227, 235, 0.3)), #FFFFFF;
+  padding: 50px;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+.review-content-right .rating-area {
+  /*display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+          text-align: center;*/
+  margin-bottom: 26px;
+}
+.review-content-right .rating-area span {
+  color: #0A1931;
+  margin-left: 8px;
+}
+.review-content-right h4, .review-content-right .h4 {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 39px;
+  text-align: center;
+  color: #0A1931;
+}
+.review-content .review-shape {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: -2;
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .review-content .review-shape {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1023px) {
+  .review-content .review-shape {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  .review-content-right h4, .review-content-right .h4 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .review-content-left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .review-content-left .review-person-area {
+    width: 50%;
+  }
+  .review-content-left .review-person-area:nth-last-child(2) {
+    margin-bottom: 0px;
+  }
+  .review-content-right {
+    margin-top: 20px;
+  }
+  .review-content-right h4, .review-content-right .h4 {
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+@media (min-width: 575px) and (max-width: 767px) {
+  .review-content-right {
+    margin-top: 20px;
+  }
+  .review-content-right h4, .review-content-right .h4 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 574px) {
+  .review {
+    padding: 50px 0;
+  }
+  .review-content h3, .review-content .h3 {
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 50px;
+  }
+  .review-content-right {
+    margin-top: 20px;
+    padding: 30px;
+  }
+  .review-content-right h4, .review-content-right .h4 {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}

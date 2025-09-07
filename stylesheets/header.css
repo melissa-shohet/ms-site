@@ -1,0 +1,158 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap);
+/*@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css);
+/**/@import url(modified-libs.css);
+/**/@import url(general.css);
+/* ------------- Header ------------- */
+
+.header .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.header-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 28px 0;
+}
+.header-content .horiz-space {
+    padding: 0px;
+}
+.header-content-menu ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.header-content-menu ul li {
+  margin: 10px;
+}
+.header-content-menu ul li:last-child {
+  left-margin: 50px;
+}
+.header-content-menu ul li a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0A1931;
+  text-decoration: none;
+  padding: 0px;
+  text-align: center;
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .header-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header-content .logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 0px;
+    padding: 20px;
+  }
+  .header-content .horiz-space {
+    padding: 2.5px;
+  }
+  .header-content .navbar {
+      padding: 0px;
+  }
+  .header-content-menu {
+      border-radius: var(
+        --bs-navbar-toggler-border-radius);
+      border: var(--bs-border-width)
+        solid var(--bs-navbar-toggler-border-color);
+  }
+  .header-content-menu ul {
+      margin: 0px;
+  }
+  .header-content-menu ul li {
+    padding: 0px;
+  }
+  .header-content-menu ul li a {
+    padding: 0px;
+    border-bottom: var(--bs-border-width)
+        solid var(--bs-navbar-toggler-border-color);
+  }
+}
+@media (max-width: 574px) {
+  .header-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header-content .logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 0px;
+    padding: 15px;
+  }
+  .header-content .horiz-space {
+    padding: 2.5px;
+  }
+  .header-content .navbar {
+      padding: 0px;
+  }
+  .header-content-menu {
+      border-radius: var(
+        --bs-navbar-toggler-border-radius);
+      border: var(--bs-border-width)
+        solid var(--bs-navbar-toggler-border-color);
+  }
+  .header-content-menu ul {
+      margin: 0px;
+  }
+  .header-content-menu ul li {
+    padding: 0px;
+  }
+  .header-content-menu ul li a {
+    padding: 0px;
+    border-bottom: var(--bs-border-width)
+        solid var(--bs-navbar-toggler-border-color);
+  }
+}

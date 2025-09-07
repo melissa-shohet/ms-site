@@ -1,0 +1,185 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap);
+/*@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css);
+/**/@import url(modified-libs.css);
+/* ------------- General Resources ------------- */
+
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 32px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+.btn--primary {
+  background-color: #684FFF;
+  color: #FFFFFF;
+}
+.btn--primary:hover {
+  background-color: #5033FF;
+  color: #FFFFFF;
+}
+.btn--primary svg {
+  margin-left: 9px;
+}
+.btn--secondary {
+  border: 1px solid #DFE3EB;
+  color: #0A1931;
+  background-color: #FFFFFF;
+}
+.btn--secondary:hover {
+  border: 1px solid #0A1931;
+}
+.btn--secondary svg {
+  margin-left: 9px;
+}
+
+.social {
+  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.social-square {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #DFE3EB;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+}
+.social-square:hover {
+  background-color: #684FFF;
+  color: #FFFFFF;
+  border-color: #684FFF;
+}
+.social-sm-round {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #DFE3EB;
+  border-radius: 50%;
+}
+.social-sm-round:hover {
+  background-color: #684FFF;
+  color: #FFFFFF;
+  border-color: #684FFF;
+}
+.social-lg-round {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(104, 79, 255, 0.1);
+}
+
+.light-dot {
+  width: 64px;
+  height: 3px;
+  background-color: #684FFF;
+  opacity: 0.3;
+  border-radius: 50px;
+  position: absolute;
+  margin-top: 16px;
+}
+
+.deep-dot {
+  width: 80px;
+  height: 3px;
+  background: #684FFF;
+  border-radius: 3px;
+  margin-top: 16px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.right-arrow-icon {
+  position: relative;
+  margin-top: 30px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+.right-arrow-icon span {
+  display: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.right-arrow-icon:hover span {
+  display: inline-block;
+  padding-right: 8px;
+}
+
+.para-header {
+    font-size: 20px;
+    text-align: center;
+}
+.italics {
+	font-style: italic;
+}
+
+.gray-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 40px;
+  background-color: #737D8C;
+  margin: 0 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-img-icon .youtube {
+  width: 168px;
+  height: 120px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(223, 227, 235, 0.3)), to(rgba(223, 227, 235, 0.3))), #FFFFFF;
+  background: linear-gradient(0deg, rgba(223, 227, 235, 0.3), rgba(223, 227, 235, 0.3)), #FFFFFF;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.social-img-icon .youtube:hover {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 20px 48px rgba(10, 25, 49, 0.09);
+          box-shadow: 0px 20px 48px rgba(10, 25, 49, 0.09);
+  border-radius: 8px;
+}

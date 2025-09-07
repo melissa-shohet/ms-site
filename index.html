@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>HOME -- MELISSA SHOHET</title>
+	<meta name="description" content="--TO DO--" />
+	<meta name="keywords" content="--TO DO--" />
+	<meta name="author" content="Melissa Shohet" />
+	<link rel="shortcut icon" href="images/logo.png"> 
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <link rel="stylesheet" href="stylesheets/intro.css">
+    <link rel="stylesheet" href="stylesheets/upcoming.css">
+    <link rel="stylesheet" href="stylesheets/image-grid.css">
+    <link rel="stylesheet" href="stylesheets/prior.css">
+    <link rel="stylesheet" href="stylesheets/review.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ehtml@1.0.21/ehtml.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/eventie@1.0.6/eventie.min.js"></script>
+	<script src='/resources/js/modernizr.custom.js'></script>
+    <script src="resources/js/events.js"></script>
+	<script src='/resources/js/classie.js'></script>
+    <!--imagesLoaded depends on: events.js, eventie.js being fully loaded
+    <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" />-->
+    <!--<script>
+        /*!
+            * imagesLoaded v3.0.2
+            * JavaScript is all like "You images are done yet or what?"
+            */
+        ( function( window ) {
+
+            'use strict';
+
+            var $ = window.jQuery;
+            var console = window.console;
+            var hasConsole = typeof console !== 'undefined';
+
+            // -------------------------- helpers -------------------------- //
+
+            // extend objects
+            function extend( a, b ) {
+                for ( var prop in b ) {
+                a[ prop ] = b[ prop ];
+                }
+                return a;
+            }
+
+            var objToString = Object.prototype.toString;
+            function isArray( obj ) {
+                return objToString.call( obj ) === '[object Array]';
+            }
+
+            // turn element or nodeList into an array
+            function makeArray( obj ) {
+                var ary = [];
+                if ( isArray( obj ) ) {
+                // use object if already an array
+                ary = obj;
+                } else if ( typeof obj.length === 'number' ) {
+                // convert nodeList to array
+                for ( var i=0, len = obj.length; i < len; i++ ) {
+                    ary.push( obj[i] );
+                }
+                } else {
+                // array of single index
+                ary.push( obj );
+                }
+                return ary;
+            }
+
+            // --------------------------  -------------------------- //
+
+            function defineImagesLoaded( EventEmitter, eventie ) {
+
+                /**
+                * @param {Array, Element, NodeList, String} elem
+                * @param {Object or Function} options - if function, use as callback
+                * @param {Function} onAlways - callback function
+                */
+                function ImagesLoaded( elem, options, onAlways ) {
+                // coerce ImagesLoaded() without new, to be new ImagesLoaded()
+                if ( !( this instanceof ImagesLoaded ) ) {
+                    return new ImagesLoaded( elem, options );
+                }
+                // use elem as selector string
+                if ( typeof elem === 'string' ) {
+                    elem = document.querySelectorAll( elem );
+                }
+
+                this.elements = makeArray( elem );
+                this.options = extend( {}, this.options );
+
+                if ( typeof options === 'function' ) {
+                    onAlways = options;
+                } else {
+                    extend( this.options, options );
+                }
+
+                if ( onAlways ) {
+                    console.log(this);
+                    this.on( 'always', onAlways );
+                }
+
+                this.getImages();
+
+                if ( $ ) {
+                    // add jQuery Deferred object
+                    this.jqDeferred = new $.Deferred();
+                }
+
+                // HACK check async to allow time to bind listeners
+                var _this = this;
+                setTimeout( function() {
+                    _this.check();
+                });
+                }
+
+                ImagesLoaded.prototype = new EventEmitter();
+
+                ImagesLoaded.prototype.options = {};
+
+                ImagesLoaded.prototype.getImages = function() {
+                this.images = [];
+
+                // filter & find items if we have an item selector
+                for ( var i=0, len = this.elements.length; i < len; i++ ) {
+                    var elem = this.elements[i];
+                    // filter siblings
+                    if ( elem.nodeName === 'IMG' ) {
+                    this.addImage( elem );
+                    }
+                    // find children
+                    var childElems = elem.querySelectorAll('img');
+                    // concat childElems to filterFound array
+                    for ( var j=0, jLen = childElems.length; j < jLen; j++ ) {
+                    var img = childElems[j];
+                    this.addImage( img );
+                    }
+                }
+                };
+
+                /**
+                * @param {Image} img
+                */
+                ImagesLoaded.prototype.addImage = function( img ) {
+                var loadingImage = new LoadingImage( img );
+                this.images.push( loadingImage );
+                };
+
+                ImagesLoaded.prototype.check = function() {
+                var _this = this;
+                var checkedCount = 0;
+                var length = this.images.length;
+                this.hasAnyBroken = false;
+                // complete if no images
+                if ( !length ) {
+                    this.complete();
+                    return;
+                }
+
+                function onConfirm( image, message ) {
+                    if ( _this.options.debug && hasConsole ) {
+                    console.log( 'confirm', image, message );
+                    }
+
+                    _this.progress( image );
+                    checkedCount++;
+                    if ( checkedCount === length ) {
+                    _this.complete();
+                    }
+                    return true; // bind once
+                }
+
+                for ( var i=0; i < length; i++ ) {
+                    var loadingImage = this.images[i];
+                    loadingImage.on( 'confirm', onConfirm );
+                    loadingImage.check();
+                }
+                };
+
+                ImagesLoaded.prototype.progress = function( image ) {
+                this.hasAnyBroken = this.hasAnyBroken || !image.isLoaded;
+                this.emit( 'progress', this, image );
+                if ( this.jqDeferred ) {
+                    this.jqDeferred.notify( this, image );
+                }
+                };
+
+                ImagesLoaded.prototype.complete = function() {
+                var eventName = this.hasAnyBroken ? 'fail' : 'done';
+                this.isComplete = true;
+                this.emit( eventName, this );
+                this.emit( 'always', this );
+                if ( this.jqDeferred ) {
+                    var jqMethod = this.hasAnyBroken ? 'reject' : 'resolve';
+                    this.jqDeferred[ jqMethod ]( this );
+                }
+                };
+
+                // -------------------------- jquery -------------------------- //
+
+                if ( $ ) {
+                $.fn.imagesLoaded = function( options, callback ) {
+                    var instance = new ImagesLoaded( this, options, callback );
+                    return instance.jqDeferred.promise( $(this) );
+                };
+                }
+
+
+                // --------------------------  -------------------------- //
+
+                var cache = {};
+
+                function LoadingImage( img ) {
+                this.img = img;
+                }
+
+                LoadingImage.prototype = new EventEmitter();
+
+                LoadingImage.prototype.check = function() {
+                // first check cached any previous images that have same src
+                var cached = cache[ this.img.src ];
+                if ( cached ) {
+                    this.useCached( cached );
+                    return;
+                }
+                // add this to cache
+                cache[ this.img.src ] = this;
+
+                // If complete is true and browser supports natural sizes,
+                // try to check for image status manually.
+                if ( this.img.complete && this.img.naturalWidth !== undefined ) {
+                    // report based on naturalWidth
+                    this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
+                    return;
+                }
+
+                // If none of the checks above matched, simulate loading on detached element.
+                var proxyImage = this.proxyImage = new Image();
+                eventie.bind( proxyImage, 'load', this );
+                eventie.bind( proxyImage, 'error', this );
+                proxyImage.src = this.img.src;
+                };
+
+                LoadingImage.prototype.useCached = function( cached ) {
+                if ( cached.isConfirmed ) {
+                    this.confirm( cached.isLoaded, 'cached was confirmed' );
+                } else {
+                    var _this = this;
+                    cached.on( 'confirm', function( image ) {
+                    _this.confirm( image.isLoaded, 'cache emitted confirmed' );
+                    return true; // bind once
+                    });
+                }
+                };
+
+                LoadingImage.prototype.confirm = function( isLoaded, message ) {
+                this.isConfirmed = true;
+                this.isLoaded = isLoaded;
+                this.emit( 'confirm', this, message );
+                };
+
+                // trigger specified handler for event type
+                LoadingImage.prototype.handleEvent = function( event ) {
+                var method = 'on' + event.type;
+                if ( this[ method ] ) {
+                    this[ method ]( event );
+                }
+                };
+
+                LoadingImage.prototype.onload = function() {
+                this.confirm( true, 'onload' );
+                this.unbindProxyEvents();
+                };
+
+                LoadingImage.prototype.onerror = function() {
+                this.confirm( false, 'onerror' );
+                this.unbindProxyEvents();
+                };
+
+                LoadingImage.prototype.unbindProxyEvents = function() {
+                eventie.unbind( this.proxyImage, 'load', this );
+                eventie.unbind( this.proxyImage, 'error', this );
+                };
+
+                // -----  ----- //
+
+                return ImagesLoaded;
+            }
+
+            // -------------------------- transport -------------------------- //
+
+            if ( typeof define === 'function' && define.amd ) {
+                // AMD
+                define( [
+                    'eventEmitter',
+                    'eventie'
+                ],
+                defineImagesLoaded );
+            } else {
+                console.log(window.eventie);
+                console.log(window.EventEmitter);
+                console.log(window);
+                // browser global
+                window.imagesLoaded = defineImagesLoaded(
+                window.EventEmitter,
+                window.eventie
+                );
+            }
+
+        })( window );
+    </script>-->
+    <script>
+        function scrollToTop(){
+            window.scrollTo(0, 0);
+        }
+    </script>
+    <script>
+        function toggleVisibilityWId(elementId){
+            var x = document.getElementById(elementId);
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+        }
+    </script>
+    <script>
+        function clearButtons(currentButton){
+            let buttons = 
+                document.getElementsByClassName('carousel-button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            currentButton.classList.add('active');
+        }
+    </script>
+    <script>
+        function populateCarousel(review){
+            const carouselRole = document.querySelector(".carousel-role");
+            const carouselTitle = document.querySelector(".carousel-title");
+            const carouselReview = document.querySelector(".carousel-review");
+            carouselRole.textContent = review.role;
+            carouselTitle.textContent = review.show;
+            carouselReview.textContent = review.description;
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            let buttons = 
+                document.getElementsByClassName('carousel-button');
+            let jsonElt = 
+                document.querySelector('.storage');
+            let reviews = JSON.parse(jsonElt.getAttribute("custom"))["reviews"];
+
+            function addActive(button, index) {
+                button.classList.add('active');
+                button.click(reviews[index]);
+            }
+
+            function removeActive(button) {
+                button.classList.remove('active');
+            }
+
+            addActive(buttons[0], 0);
+            setInterval(function () {
+                for (let i = 0; i < buttons.length; i++) {
+                    if (i + 1 == buttons.length) {
+                        addActive(buttons[0], 0);
+                        setTimeout(removeActive, 150, buttons[i]);
+                        break;
+                    }
+                    if (buttons[i].classList.contains('active')) {
+                        setTimeout(removeActive, 150, buttons[i]);
+                        addActive(buttons[i + 1], i+1);
+                        break;
+                    }
+                }
+            }, 9000);
+        };
+    </script>
+</head>
+<body>
+    <template is="e-json" 
+        data-src="json/upcoming-projects.json" 
+        data-object-name="response">
+
+        <div id="storage" class="storage" custom="${response.body}"></div>
+
+        <!-- Header Section Starts Here-->
+        <section class="header">
+            <div class="container">
+                <div class="header-content">
+                    <nav class="header-content navbar navbar-expand-md bg-white navbar-white">
+                        <!-- Brand -->
+                        <a class="navbar-brand logo" href="#">
+                            <img src="images/logo.png" alt="logo">
+                        </a>
+
+                        <!-- Toggler/collapsibe Button -->
+                        <button class="navbar-toggler" type="button" onclick = 'toggleVisibilityWId("collapsibleNavbar")'>
+                            <span class="navbar-toggler-icon" />
+                        </button>
+
+                        <!-- Horizontal spacing -->
+                        <div class="horiz-space" />
+
+                        <!-- Navbar links -->
+                        <div class="header-content-menu collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href=".">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about-me">Biography</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="upcoming-projects">Upcoming</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="media-gallery">Gallery</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact-me">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!-- Header Section Ends Here-->
+
+        <!-- Intro Section Starts Here-->
+        <section class="intro" id="intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="row">
+                        <!-- Left Content -->
+                        <div class="col-lg-6 order-2 order-lg-0">
+                            <div class="intro-content-left">
+                                <!-- Header -->
+                                <h3 class="intro-traits"> - 
+                                    <span>Actor</span> - 
+                                    <span>Comedian</span> - 
+                                    <br/> - 
+                                    <span>Playwright</span> - 
+                                    <span>Director</span> - 
+                                </h3>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <!-- Intro -->
+                                <p>
+                                    Fostering joy, laughter, community, and understanding, one pun at a time ;)
+                                </p>
+                                <!-- Buttons -->
+                                <a href="contact-me" class="btn btn--primary">
+                                    Reach Out
+                                </a>
+                                <a href="about-me" class="btn btn--secondary">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Right Content - Image-->
+                        <div class="col-lg-6 order-1 order-lg-0">
+                            <div class="intro-content-right">
+                                <!--<img class="dot-shadow-img" src="images/dot-shadow-img.png" alt="dot-shadow"> -->
+                                <img src="images/intro.png" alt="intro-img" class="intro-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <img class="lg-round-shape" src="images/lg-round-shape.png" alt="shape">               
+        <!-- Intro Section Ends Here-->
+
+        <!-- Upcoming Section Starts Here-->
+        <section class="upcoming" id="upcoming">
+            <div class="container">
+                <!-- Header -->
+                <div class="upcoming-text">
+                    <h4 class="font-sm">
+                        The Next Chapter
+                        <p class="para-header">Upcoming Projects</p>
+                        <div class="deep-dot"></div>
+                    </h4>
+                </div>
+                <!-- Project List - Dynamically Generated-->
+                <!-- Query for JSON -->
+                <div class="row upcoming-list" id="upcoming-list">
+                    <template is="e-for-each"
+                        data-list-to-iterate="
+                        ${response.body.upcoming}
+                        "
+                        data-item-name="project"
+                    >
+                        <!-- Display box for each element in upcoming projects array -->
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="upcoming-content-area">
+                                <img class="layer-svg" src="images/theater-icon.png">
+                                <p class="font-xs"><span data-text="${project.title}" /></p>
+                                <span class="light-dot"></span>
+                                <a href="upcoming-projects" class="right-arrow-icon">               
+                                    <span>Learn More</span>                    
+                                    <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M33 12.03H3" stroke="#0A1931" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M27.95 4.80005L34 12.0288L27.95 19.2588" stroke="#0A1931" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>  
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <!-- Service Section Ends Here-->
+
+        <!-- Previous Section Starts Here-->
+        <section class="project" id="project">
+            <div class="container">
+                <h4 class="font-sm">
+                    A Chronicle of Creativity
+                    <p class="para-header">Selected Works</p>
+                    <div class="deep-dot"></div>
+                </h4>
+                	<div class="container">
+		            <div class="row">
+                        <template is="e-for-each"
+                        data-list-to-iterate="
+                        ${response.body.prior.images}
+                        "
+                        data-item-name="prior">
+                        <template is="e-if"
+                        data-condition-to-display="${prior.display_home}">
+                            <div class="col-lg-3 col-md-6 col-sm-12 project-content">
+                                <div class="project-work">
+                                    <div class="project-image-clipped" 
+                                        style="background-image: url(images/${prior.img});">
+                                    </div>
+                                    <div class="project-work-text">
+                                        <h5 class="font-mini">
+                                            <span data-text="${prior.role}" />
+                                             - <p data-text="${prior.show}" />
+                                        </h5>
+                                        <a href="media-gallery" class="right-arrow-icon">               
+                                            <span>View Full Gallery</span>                    
+                                            <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M33 12.03H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M27.95 4.80005L34 12.0288L27.95 19.2588" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        </template>
+		            </div>
+	            </div>
+            </div>
+        </section>
+        <!-- Project Section Ends Here-->
+
+        <!-- Company Section Starts Here-->
+        <!--<section class="company">
+            <div class="container">   
+                <div class="company-content">
+                    <div class="row align-items-center ">
+                        <div class="col-xl-3 px-0">
+                            <div class="company-content-text">
+
+                                <h3 class="font-xs">
+                                    I Worked with
+                                    <span>289+</span> 
+                                    Companies all over the World.
+                                </h3> 
+                            </div>
+                        </div>
+                        <div class="col-xl-9 px-0">
+                            <div class="company-content-social-activity">                          
+                                <div class="social-img-icon"> 
+                                    <a href="#" class="youtube">         
+                                        <img src="images/youtube.png" alt="youtube"> 
+                                        </a> 
+                                </div>  
+                                <div class="social-img-icon"> 
+                                    <a href="#" class="google youtube">                  
+                                    <img src="images/google.png" alt="google">
+                                        </a> 
+                                </div> 
+                                <div class="social-img-icon"> 
+                                    <a href="#" class="adobe youtube">                                 
+                                        <img src="images/adobe.png" alt="adobe">            
+                                        </a> 
+                                </div> 
+                                <div class="social-img-icon"> 
+                                    <a href="#" class="sketch youtube">                                 
+                                        <img src="images/sketch.png" alt="sketch">            
+                                        </a> 
+                                </div> 
+                                <div class="social-img-icon"> 
+                                    <a href="#" class="sketch youtube">                                 
+                                            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M29.3333 10.0249H2.66663" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M24.8444 4L30.2221 10.024L24.8444 16.049" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>            
+                                        </a> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>          
+                </div>                      
+            </div>
+        </section>
+        <!-- Company Section Ends Here-->
+
+        
+        <!-- Review Section Starts Here-->
+        <section class="review" id="review" style="clear: both;">
+            <div class="container">
+                <div class="review-content">
+                    <h3 class="font-sm">The Reviews Are In!
+                        <div class="deep-dot"></div>
+                    </h3>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="review-content-left">
+                                <template is="e-for-each"
+                                    data-list-to-iterate="
+                                    ${response.body.reviews}
+                                    "
+                                    data-item-name="review"
+                                >
+                                    <button type="button" onclick="populateCarousel(${review});clearButtons(this);" class="review-person-area carousel-button">
+                                        <div class="review-person-content">
+                                            <div class="person-img">
+                                                <img src="images/${review.photo}.png" alt="img">
+                                            </div>
+                                            <div class="person-text">
+                                                <div class="name" data-text="${review.name}"></div>
+                                                <div class="title-name" data-text="${review.person_information}"></div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </template>    
+                            </div>    
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <div class="review-content-right">
+                                <div class="rating-area font-xs">
+                                    <span class="carousel-role"></span>   in </br>
+                                    <span class="carousel-title italics"></span>
+                                </div>
+                                <h4 class="carousel-review"></h4>
+                                <img class="review-shape" src="images/review-shape.png" alt="shape">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </br>
+            </br>
+        </section>
+        <!-- Review Section Ends Here-->
+
+
+        <!-- Blog And News Section Starts Here-->
+        <!--<section class="blog">
+            <div class="container">
+                <div class="blog-area-content">
+                    <h3 class="font-sm">Blog & News
+                        <div class="deep-dot"></div>
+                    </h3>
+                <div class="row">
+                <div class="col-lg-4">
+                    <div class="blog-area">
+                        <div class="blog-area-image">
+                            <img src="images/blog-img.jpg" alt="blog-img">
+                        </div>
+                        <div class="blog-area-content">
+                            <div class="date-text">
+                                <div class="date">
+                                24 May, 2021
+                                </div>
+                                <span class="gray-dot"></span>
+                                <div class="time">
+                                    9 min read
+                                </div>
+
+                            </div>
+                            <h5 class="font-mini"><a href="#">
+                                23 Essential Skills for Successful Web Designers in 2021.
+                            </a></h5>
+                            <a href="#" class="right-arrow-icon">               
+                                <span>View Project</span>                    
+                                <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M33 12.03H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M27.95 4.80005L34 12.0288L27.95 19.2588" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-area">
+                        <div class="blog-area-image">
+                            <img src="images/blog-img.jpg" alt="blog-img">
+                        </div>
+                        <div class="blog-area-content">
+                            <div class="date-text">
+                                <div class="date">
+                                24 May, 2021
+                                </div>
+                                <span class="gray-dot"></span>
+                                <div class="time">
+                                    9 min read
+                                </div>
+
+                            </div>
+                            <h5 class="font-mini"><a href="#">
+                                23 Essential Skills for Successful Web Designers in 2021.
+                            </a></h5>
+                            <a href="#" class="right-arrow-icon">               
+                                <span>View Project</span>                    
+                                <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M33 12.03H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M27.95 4.80005L34 12.0288L27.95 19.2588" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4">
+                    <div class="mini-blog">
+                        <div class="mini-blog-text para-1">
+                            <a href="#">10 Best Design Feedback and Annotation tools for Designers.</a>
+                        </div>
+                        <a href="#" class="right-arrow-icon">
+                            <span>Read More</span>              
+                                <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.3333 10.0249H2.66663" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.8444 4L30.2221 10.024L24.8444 16.049" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>  
+                        </a>
+                    </div>
+                    <div class="mini-blog">
+                        <div class="mini-blog-text para-1">
+                            <a href="#">10 Best Design Feedback and Annotation tools for Designers.</a>
+                        </div>
+                        <a href="#" class="right-arrow-icon">
+                            <span>Read More</span>              
+                                <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.3333 10.0249H2.66663" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.8444 4L30.2221 10.024L24.8444 16.049" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>  
+                        </a>
+                    </div>
+                    <div class="mini-blog">
+                        <div class="mini-blog-text para-1">
+                            <a href="#">10 Best Design Feedback and Annotation tools for Designers.</a>
+                        </div>
+                        <a href="#" class="right-arrow-icon">
+                            <span>Read More</span>              
+                                <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.3333 10.0249H2.66663" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.8444 4L30.2221 10.024L24.8444 16.049" stroke="#684FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>  
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>-->
+        <!-- Blog And News Section Ends Here-->
+
+
+        <!-- Footer Section Starts Here-->
+        <div class="footer">
+            <a class="font-xl" id="backtoTop" onclick="scrollToTop()"href="#">
+                <span>&uarr;Back to Top</span>
+            </a>
+            <div class="container">
+                <div class="footer-text">
+                    <h4>&copy 2021 - Albert Flores. Original design by <a href="https://github.com/templatecookie/albert-html">Templatecookie</a>.
+                    Website redesign by Melissa Shohet.
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section Ends Here-->
+
+    </template>
+</body>
+</html>

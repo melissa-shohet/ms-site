@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CONTACT ME -- MELISSA SHOHET</title>
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <link rel="stylesheet" href="stylesheets/contact-me.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ehtml@1.0.21/ehtml.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function scrollToTop(){
+            window.scrollTo(0, 0);
+        }
+    </script>
+    <script>
+        function toggleVisibilityWId(elementId){
+            var x = document.getElementById(elementId);
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+        }
+    </script>
+</head>
+<body>
+<template is="e-json" 
+        data-src="json/upcoming-projects.json" 
+        data-object-name="response">
+
+    <!-- Header Section Starts Here-->
+    <section class="header">
+        <div class="container">
+            <div class="header-content">
+                <nav class="header-content navbar navbar-expand-md bg-white navbar-white">
+                    <!-- Brand -->
+                    <a class="navbar-brand logo" href="#">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" onclick='toggleVisibilityWId("collapsibleNavbar")'>
+                        <span class="navbar-toggler-icon" />
+                    </button>
+
+                    <!-- Horizontal spacing -->
+                    <div class="horiz-space" />
+
+                    <!-- Navbar links -->
+                    <div class="header-content-menu collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href=".">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-me">Biography</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="upcoming-projects">Upcoming</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="media-gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact-me">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!-- Header Section Ends Here-->
+
+
+
+    <!-- Contacts Section Starts Here-->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-area-info" style="width: 100%;">
+                        <h3><span class="font-xs" data-text="${response.body.contact.form_header}"/></h3>
+                        <div id="form-content" class="contact-form">
+                            <e-form
+                                class="form"
+                                id="form"
+                                data-validation-error-message="Please fix your errors before submitting!"
+                                data-validation-error-class-for-message-box="form-message-error"
+                            >
+                                <input
+                                type="hidden"
+                                name="access_key"
+                                value="${response.body.contact.web3forms_apikey}">
+
+                                <div class="top-input">
+                                    <input
+                                        type="text"
+                                        placeholder="Full Name"
+                                        name="from_name"
+                                        class="form-input"
+                                        required
+                                        data-validation-pattern="^[a-zA-Z ,.'-]+$"
+                                        data-validation-bad-format-error-message="Name can contain only alphabetic characters"
+                                        data-validation-absence-error-message="Name is required"
+                                        data-validation-error-class-for-element="elm-error"
+                                        data-validation-error-class-for-message-box="message-error"
+                                    >
+                                    <input
+                                        type="email"
+                                        placeholder="Email address"
+                                        name="email"
+                                        class="form-input"
+                                        required
+                                        data-validation-pattern="email"
+                                        data-validation-bad-format-error-message="This is not proper email address"
+                                        data-validation-absence-error-message="Email is required"
+                                        data-validation-error-class-for-element="elm-error"
+                                        data-validation-error-class-for-message-box="message-error"
+                                    >  
+                                </div>
+                                <input
+                                    type="text"
+                                    placeholder="Subject"
+                                    name="subject"
+                                    class="form-input"
+                                    data-validation-pattern="^[a-zA-Z ,.'-]+$"
+                                    data-validation-bad-format-error-message="Subject can contain only alphabetic characters"
+                                    data-validation-error-class-for-element="elm-error"
+                                    data-validation-error-class-for-message-box="message-error"
+                                >
+                                <textarea 
+                                    name="message" 
+                                    id="" 
+                                    cols="70" 
+                                    rows="10" 
+                                    placeholder="Message"
+                                    class="form-input"
+                                ></textarea>
+                                <input type="hidden" name="botcheck" id="" style="display: none;">
+
+                                <div id="resp-box" style="display: none;">
+                                    <h3 class="font-mini">
+                                        Thank you for reaching out!
+                                    </h3>
+                                </div>
+
+                                <button
+                                    class="btn btn--primary"
+                                    data-request-url="https://api.web3forms.com/submit"
+                                    data-request-method="POST"
+                                    data-request-headers='{
+                                        "Content-Type": "application/json"
+                                    }'
+                                    data-response-name="response"
+                                    onclick="this.form.submit(this);toggleVisibilityWId('resp-box');"
+                                    data-actions-on-response=""
+                                >
+                                    Send Message
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22 2L11 13" stroke="#DFE3EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="#DFE3EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                </button>
+                            </e-form>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-area-location">
+                        <h3 class="font-xs" data-text="${response.body.contact.info_header}"></h3>
+                        <div class="contact-location-icon">
+                        <a href="#" class="social social-lg-round">              
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28 13.3335C28 22.6668 16 30.6668 16 30.6668C16 30.6668 4 22.6668 4 13.3335C4 10.1509 5.26428 7.09865 7.51472 4.84821C9.76516 2.59778 12.8174 1.3335 16 1.3335C19.1826 1.3335 22.2348 2.59778 24.4853 4.84821C26.7357 7.09865 28 10.1509 28 13.3335Z" stroke="#684FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M16 17.3335C18.2091 17.3335 20 15.5426 20 13.3335C20 11.1244 18.2091 9.3335 16 9.3335C13.7909 9.3335 12 11.1244 12 13.3335C12 15.5426 13.7909 17.3335 16 17.3335Z" stroke="#684FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>  
+                        </a>
+                        <div class="location-text">
+                            <span class="para-2" data-text="${response.body.contact.address}" />
+                        </div>
+                        </div>
+                        <div class="contact-location-icon">
+                        <a href="#" class="social social-lg-round">                   
+                            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.33329 5.66699H26.6666C28.1333 5.66699 29.3333 6.86699 29.3333 8.33366V24.3337C29.3333 25.8003 28.1333 27.0003 26.6666 27.0003H5.33329C3.86663 27.0003 2.66663 25.8003 2.66663 24.3337V8.33366C2.66663 6.86699 3.86663 5.66699 5.33329 5.66699Z" stroke="#684FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M29.3333 8.3335L16 17.6668L2.66663 8.3335" stroke="#684FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <div class="location-text">
+                            <span class="para-2" data-text="${response.body.contact.email}" />
+                        </div>
+                        </div>
+                        <div class="contact-location-icon">
+                            <a href="#" class="social social-lg-round">                
+                                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.65597 3.6665C8.13297 3.6665 7.61697 3.8545 7.18697 4.1975L7.12497 4.2285L7.09397 4.2605L3.96897 7.4795L3.99997 7.5095C3.54145 7.92586 3.21657 8.46874 3.06635 9.0696C2.91614 9.67046 2.94732 10.3024 3.15597 10.8855C3.15997 10.8935 3.15197 10.9085 3.15597 10.9165C4.00397 13.3425 6.17197 18.0265 10.406 22.2605C14.656 26.5105 19.402 28.5925 21.75 29.5105H21.781C22.3694 29.705 22.9982 29.7439 23.6061 29.6233C24.214 29.5027 24.7803 29.2269 25.25 28.8225L28.406 25.6665C29.234 24.8385 29.234 23.4005 28.406 22.5725L24.344 18.5105L24.312 18.4475C23.484 17.6195 22.016 17.6195 21.187 18.4475L19.187 20.4475C17.686 19.7264 16.3054 18.7779 15.094 17.6355C13.457 16.0725 12.621 14.2755 12.313 13.5725L14.313 11.5725C15.153 10.7325 15.168 9.3345 14.281 8.5105L14.312 8.4785L14.219 8.3855L10.219 4.2605L10.188 4.2295L10.125 4.1975C9.70994 3.85861 9.19178 3.67131 8.65597 3.6665ZM8.65597 5.6665C8.73772 5.67125 8.81522 5.70452 8.87497 5.7605L12.875 9.8535L12.969 9.9475C12.961 9.9395 13.027 10.0455 12.906 10.1665L10.406 12.6665L9.93698 13.1045L10.157 13.7285C10.157 13.7285 11.305 16.8035 13.719 19.1045L13.938 19.2915C16.261 21.4125 19 22.5725 19 22.5725L19.625 22.8545L22.594 19.8845C22.766 19.7135 22.734 19.7135 22.906 19.8845L27 23.9805C27.172 24.1515 27.172 24.0895 27 24.2605L23.937 27.3235C23.477 27.7185 22.988 27.8005 22.407 27.6055C20.141 26.7145 15.738 24.7805 11.812 20.8555C7.85498 16.8975 5.78897 12.4095 5.03197 10.2305C4.87897 9.8235 4.98797 9.2225 5.34397 8.9175L5.40597 8.8545L8.43797 5.7615C8.49707 5.70558 8.5738 5.67199 8.65497 5.6665H8.65597Z" fill="#684FFF"/>
+                                </svg>     
+                            </a>
+                            <div class="location-text">
+                                <span class="para-2" data-text="${response.body.contact.phone}" />
+                            </div>
+                        </div>
+                        <div class="black-dot">
+                            <img src="images/black-dot.png" alt="dot-shape">
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="round-shape">
+                <img src="images/border-round-shape.png" alt="shape">
+            </div>
+            <div class="lg-round-shape">
+                <img src="images/lg-round-shape.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- Contacts Section Ends Here-->
+
+
+    <!-- Footer  Section Starts Here-->
+    <div class="footer">
+        <a class="font-xl" id="backtoTop" onclick="scrollToTop()"href="#">
+            <span>&uarr;Back to Top</span>
+        </a>
+        <div class="container">
+            <div class="footer-text">
+                <h4>&copy 2021 - Albert Flores. Original design by <a href="https://github.com/templatecookie/albert-html">Templatecookie</a>.
+                Website overhaul by Melissa Shohet.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <!-- Footer  Section Ends Here-->
+
+</template>
+</body>
+</html>

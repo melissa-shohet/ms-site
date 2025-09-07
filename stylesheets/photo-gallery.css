@@ -1,0 +1,232 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap);
+/*@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css);
+/**/@import url(modified-libs.css);
+/**/@import url(general.css);
+/**/@import url(prior.css);
+
+/* ------------- Media Gallery ------------- */
+.footer {
+	background: linear-gradient(180deg, #FFFFFF 0%, rgba(223, 227, 235, 0.6) 100%), #FFFFFF;
+}
+
+/* Flippy images - adapted from 
+https://scroll-driven-animations.style/demos/cover-flow/css/ */
+.cards-wrapper, .cards-wrapper * {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.cards-wrapper {
+	overflow-y: hidden;
+	overflow-x: auto;
+
+	--size: 6;
+	min-height: calc(var(--cover-size) * 2.5);
+	height: 100vh;
+
+	width: calc(var(--cover-size) * var(--size));
+	margin: 0 auto;
+	position: relative;
+	max-width: 100vw;
+
+	outline: 1px solid #333;
+	background: #333;
+}
+.black-bg {
+	background: #000000;
+    opacity: .35;
+	z-index: 65;
+	position: relative;
+	min-height: calc(var(--cover-size) * 5);
+}
+.cards {
+	will-change: transform, opacity;
+	list-style: none;
+    vertical-align: middle;
+	white-space: nowrap;
+	max-width: calc(var(--cover-size) * 6);
+	max-height:100%;
+	overflow: visible;
+	overflow-y: hidden;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	list-style: none;
+	min-height: inherit;
+    position: absolute;
+    top: 0%;
+	padding: calc(var(--cover-size) / 3) 0 calc(var(--cover-size));
+}
+.cards-wrapper:not(.active) {
+	scroll-snap-type: x mandatory;
+}
+
+.cards li {
+	/*min-height: inherit;*/
+	will-change: transform, opacity;
+	position: relative;
+	display: inline-block;
+	width: var(--cover-size);
+	aspect-ratio: 1;
+	scroll-snap-align: center;
+	/* Track this element as it intersects the scrollport */
+	view-timeline-name: --li-in-and-out-of-view;
+	view-timeline-axis: inline;
+	/* Link an animation to the established view-timeline and have it run during the contain phase */
+	animation: linear adjust-z-index both;
+	animation-timeline: --li-in-and-out-of-view;
+    -webkit-transition: -webkit-transform .5s ease-out;
+    transition: -webkit-transform .5s ease-out;
+    transition: transform .5s ease-out;
+    transition: transform .5s ease-out,-webkit-transform .5s ease-out;
+
+	/* Make the 3D stuff work… */
+	perspective: 40em;
+	max-height: 100%;
+	max-width: 100%;
+}
+/* Because the total size is 6, with 1 cover in the middle, there’s space for 5 left … so 2.5 on each side */
+/* Didn’t work (on the right): `calc(50% - (var(--cover-size) / 2));` */
+.cards li:first-of-type {
+	margin-left: calc(50% - (var(--cover-size) / 2));
+	margin-left: 50%;
+}
+.cards li:last-of-type {
+	margin-right: 50%;
+}
+
+.cards li .img-div {
+	height: auto;
+    vertical-align: middle;
+	text-align: center;
+	margin: auto;
+	position: relative;
+	width: 66%;
+	top: 25%;
+	white-space: normal;
+}
+
+/* For each role/image */
+.cards li div img {
+	will-change: transform, opacity;
+	width: 100%;
+	height: auto;
+    vertical-align: middle;
+
+	-webkit-box-reflect: below 0.5em linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.25));
+
+	-webkit-box-reflect: below 0.5em
+		linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+}
+.cards li > .img-div, img {
+	will-change: transform, opacity;
+	/* Link an animation to the established view-timeline (of the parent li) and have it run during the contain phase */
+	animation: linear rotate-cover both;
+	animation-timeline: --li-in-and-out-of-view;
+}
+.role-text {
+	text-align: center;
+	margin: auto;
+	text-decoration: none;
+	position: relative;
+	vertical-align: middle;
+	width: 75%;
+	white-space: normal;
+	position: absolute;
+    top : 50%;
+    /*left: 50%;*/
+    -ms-transform: translate(-50%, -50%);
+    transform    : translate(-50%, -50%);
+	/* Link an animation to the established view-timeline and have it run during the contain phase */
+	animation: linear adjust-opacity both;
+	animation-timeline: --li-in-and-out-of-view;
+}
+.left {
+    left: -80%;
+	left: -64%;
+}
+.right {
+	right: -139%;
+}
+.role-text p {
+	width: 100%;
+    color: #684FFF;
+	font-size: var(--text-size);
+	line-height: var(--text-size)*1.5;
+}
+.role-text p span {
+    color: #FFFFFF;
+	font-size: var(--text-size)*1.5;
+	line-height: var(--text-size)*2.25;
+}
+
+/* Animations while flipping */
+@keyframes adjust-z-index {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		z-index: 100; /* When at the center, be on top */
+	}
+	100% {
+		z-index: 1;
+	}
+}
+@keyframes adjust-opacity {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1; /* When at the center, appear */
+	}
+	60% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes rotate-cover {
+	0% {
+		transform: translateX(-100%) rotateY(-30deg);
+	}
+	35% {
+		transform: translateX(0) rotateY(-45deg);
+	}
+	50% {
+		transform: rotateY(0deg) translateZ(1em) scale(1.5);
+	}
+	65% {
+		transform: translateX(0) rotateY(45deg);
+	}
+	100% {
+		transform: translateX(100%) rotateY(30deg);
+	}
+}
+
+/* @media variables */
+:root {
+	--cover-size: min(33%, 16rem);
+	--text-size: 24px;
+}
+
+@media (max-width: 700px) {
+	:root {
+		--text-size: 18px;
+		--cover-size: min(33%, 12rem);
+	}
+}
+@media (max-width: 430px) {
+	:root {
+		--text-size: 12px;
+		--cover-size: min(33%, 6rem);
+	}
+}
+@media (max-width: 270px) {
+	:root {
+		--text-size: 6px;
+	}
+}
