@@ -1,4 +1,36 @@
 {
+	"header":
+	{
+		"navbar-brand":
+		{
+			"filename": "logo.png",
+			"link": "/about-me"
+			
+		},
+		"header-content-menu":
+		[
+			{
+				"name": "Home",
+				"link": "/"
+			},
+			{
+				"name": "Biography",
+				"link": "/about-me"
+			},
+			{
+				"name": "Upcoming",
+				"link": "/upcoming-projects"
+			},
+			{
+				"name": "Gallery",
+				"link": "/media-gallery"
+			},
+			{
+				"name": "Contact",
+				"link": "/contact-me"
+			}
+		]
+	},
 	"upcoming":
 	[
 		{
