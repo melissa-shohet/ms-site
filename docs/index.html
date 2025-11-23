@@ -8,15 +8,15 @@
 	<meta name="description" content="--TO DO--" />
 	<meta name="keywords" content="--TO DO--" />
 	<meta name="author" content="Melissa Shohet" />
-	<link rel="shortcut icon" href="static/assets/images/logo.png"> 
-    <link rel="stylesheet" href="static/stylesheets/header.css">
-    <link rel="stylesheet" href="static/stylesheets/intro.css">
-    <link rel="stylesheet" href="static/stylesheets/upcoming.css">
-    <link rel="stylesheet" href="static/stylesheets/image-grid.css">
-    <link rel="stylesheet" href="static/stylesheets/prior.css">
-    <link rel="stylesheet" href="static/stylesheets/review.css">
-    <link rel="stylesheet" href="static/stylesheets/index.css">
-    <link rel="stylesheet" href="static/stylesheets/footer.css">
+	<link rel="shortcut icon" href="images/logo.png"> 
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <link rel="stylesheet" href="stylesheets/intro.css">
+    <link rel="stylesheet" href="stylesheets/upcoming.css">
+    <link rel="stylesheet" href="stylesheets/image-grid.css">
+    <link rel="stylesheet" href="stylesheets/prior.css">
+    <link rel="stylesheet" href="stylesheets/review.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ehtml@1.0.21/ehtml.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
@@ -24,7 +24,7 @@
     <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/eventie@1.0.6/eventie.min.js"></script>
 	<script src='/resources/js/modernizr.custom.js'></script>
-    <script src="/resources/js/events.js"></script>
+    <script src="resources/js/events.js"></script>
 	<script src='/resources/js/classie.js'></script>
     <!--imagesLoaded depends on: events.js, eventie.js being fully loaded
     <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" />-->
@@ -388,7 +388,7 @@
 </head>
 <body>
     <template is="e-json" 
-        data-src="/resources/data/upcoming-projects.json" 
+        data-src="json/upcoming-projects.json" 
         data-object-name="response">
 
         <div id="storage" class="storage" custom="${response.body}"></div>
@@ -400,7 +400,7 @@
                     <nav class="header-content navbar navbar-expand-md bg-white navbar-white">
                         <!-- Brand -->
                         <a class="navbar-brand logo" href="#">
-                            <img src="static/assets/images/logo.png" alt="logo">
+                            <img src="images/logo.png" alt="logo">
                         </a>
 
                         <!-- Toggler/collapsibe Button -->
@@ -415,19 +415,19 @@
                         <div class="header-content-menu collapse navbar-collapse" id="collapsibleNavbar">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href=".">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/about-me">Biography</a>
+                                    <a class="nav-link" href="about-me">Biography</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/upcoming-projects">Upcoming</a>
+                                    <a class="nav-link" href="upcoming-projects">Upcoming</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/media-gallery">Gallery</a>
+                                    <a class="nav-link" href="media-gallery">Gallery</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/contact-me">Contact</a>
+                                    <a class="nav-link" href="contact-me">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -461,10 +461,10 @@
                                     Fostering joy, laughter, community, and understanding, one pun at a time ;)
                                 </p>
                                 <!-- Buttons -->
-                                <a href="/contact-me" class="btn btn--primary">
+                                <a href="contact-me" class="btn btn--primary">
                                     Reach Out
                                 </a>
-                                <a href="/about-me" class="btn btn--secondary">
+                                <a href="about-me" class="btn btn--secondary">
                                     Learn More
                                 </a>
                             </div>
@@ -472,15 +472,15 @@
                         <!-- Right Content - Image-->
                         <div class="col-lg-6 order-1 order-lg-0">
                             <div class="intro-content-right">
-                                <!--<img class="dot-shadow-img" src="static/assets/images/dot-shadow-img.png" alt="dot-shadow"> -->
-                                <img src="static/assets/images/intro.png" alt="intro-img" class="intro-img">
+                                <!--<img class="dot-shadow-img" src="images/dot-shadow-img.png" alt="dot-shadow"> -->
+                                <img src="images/intro.png" alt="intro-img" class="intro-img">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <img class="lg-round-shape" src="static/assets/images/lg-round-shape.png" alt="shape">               
+        <img class="lg-round-shape" src="images/lg-round-shape.png" alt="shape">               
         <!-- Intro Section Ends Here-->
 
         <!-- Upcoming Section Starts Here-->
@@ -506,10 +506,10 @@
                         <!-- Display box for each element in upcoming projects array -->
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class="upcoming-content-area">
-                                <img class="layer-svg" src="static/assets/images/theater-icon.png">
+                                <img class="layer-svg" src="images/theater-icon.png">
                                 <p class="font-xs"><span data-text="${project.title}" /></p>
                                 <span class="light-dot"></span>
-                                <a href="/upcoming-projects" class="right-arrow-icon">               
+                                <a href="upcoming-projects" class="right-arrow-icon">               
                                     <span>Learn More</span>                    
                                     <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M33 12.03H3" stroke="#0A1931" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -544,14 +544,14 @@
                             <div class="col-lg-3 col-md-6 col-sm-12 project-content">
                                 <div class="project-work">
                                     <div class="project-image-clipped" 
-                                        style="background-image: url(static/assets/images/${prior.img});">
+                                        style="background-image: url(images/${prior.img});">
                                     </div>
                                     <div class="project-work-text">
                                         <h5 class="font-mini">
                                             <span data-text="${prior.role}" />
                                              - <p data-text="${prior.show}" />
                                         </h5>
-                                        <a href="/media-gallery" class="right-arrow-icon">               
+                                        <a href="media-gallery" class="right-arrow-icon">               
                                             <span>View Full Gallery</span>                    
                                             <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M33 12.03H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -588,22 +588,22 @@
                             <div class="company-content-social-activity">                          
                                 <div class="social-img-icon"> 
                                     <a href="#" class="youtube">         
-                                        <img src="static/assets/images/youtube.png" alt="youtube"> 
+                                        <img src="images/youtube.png" alt="youtube"> 
                                         </a> 
                                 </div>  
                                 <div class="social-img-icon"> 
                                     <a href="#" class="google youtube">                  
-                                    <img src="static/assets/images/google.png" alt="google">
+                                    <img src="images/google.png" alt="google">
                                         </a> 
                                 </div> 
                                 <div class="social-img-icon"> 
                                     <a href="#" class="adobe youtube">                                 
-                                        <img src="static/assets/images/adobe.png" alt="adobe">            
+                                        <img src="images/adobe.png" alt="adobe">            
                                         </a> 
                                 </div> 
                                 <div class="social-img-icon"> 
                                     <a href="#" class="sketch youtube">                                 
-                                        <img src="static/assets/images/sketch.png" alt="sketch">            
+                                        <img src="images/sketch.png" alt="sketch">            
                                         </a> 
                                 </div> 
                                 <div class="social-img-icon"> 
@@ -642,7 +642,7 @@
                                     <button type="button" onclick="populateCarousel(${review});clearButtons(this);" class="review-person-area carousel-button">
                                         <div class="review-person-content">
                                             <div class="person-img">
-                                                <img src="static/assets/images/${review.photo}.png" alt="img">
+                                                <img src="images/${review.photo}.png" alt="img">
                                             </div>
                                             <div class="person-text">
                                                 <div class="name" data-text="${review.name}"></div>
@@ -660,7 +660,7 @@
                                     <span class="carousel-title italics"></span>
                                 </div>
                                 <h4 class="carousel-review"></h4>
-                                <img class="review-shape" src="static/assets/images/review-shape.png" alt="shape">
+                                <img class="review-shape" src="images/review-shape.png" alt="shape">
                             </div>
                         </div>
                     </div>
@@ -683,7 +683,7 @@
                 <div class="col-lg-4">
                     <div class="blog-area">
                         <div class="blog-area-image">
-                            <img src="static/assets/images/blog-img.jpg" alt="blog-img">
+                            <img src="images/blog-img.jpg" alt="blog-img">
                         </div>
                         <div class="blog-area-content">
                             <div class="date-text">
@@ -712,7 +712,7 @@
                 <div class="col-lg-4">
                     <div class="blog-area">
                         <div class="blog-area-image">
-                            <img src="static/assets/images/blog-img.jpg" alt="blog-img">
+                            <img src="images/blog-img.jpg" alt="blog-img">
                         </div>
                         <div class="blog-area-content">
                             <div class="date-text">

@@ -66,7 +66,7 @@ app.get('/resources/js/scrollAnimation.js', (req, res) => {
     })
 });*/
 
-app.get('/resources/data/upcoming-projects.json', (req, res) => {
+app.get('json/upcoming-projects.json', (req, res) => {
     fs.readFile(__dirname + '\\src\\data\\upcoming-projects.json', 'utf8', function(err, text){
         res.send(text); 
     })
