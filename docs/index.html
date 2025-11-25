@@ -499,7 +499,7 @@
                 <div class="row upcoming-list" id="upcoming-list">
                     <template is="e-for-each"
                         data-list-to-iterate="
-                        ${response.body.upcoming}
+                        ${response.body.upcoming.list}
                         "
                         data-item-name="project"
                     >
@@ -635,7 +635,7 @@
                             <div class="review-content-left">
                                 <template is="e-for-each"
                                     data-list-to-iterate="
-                                    ${response.body.reviews}
+                                    ${response.body.reviews.review_content}
                                     "
                                     data-item-name="review"
                                 >
