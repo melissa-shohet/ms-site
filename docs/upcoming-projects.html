@@ -85,7 +85,7 @@
     data-object-name="response">
         <template is="e-for-each"
             data-list-to-iterate="
-            ${response.body.upcoming}
+            ${response.body.upcoming.list}
             "
             data-item-name="project">
             <section class="upcoming-proj ${project.odd}" id="${project.link}">
