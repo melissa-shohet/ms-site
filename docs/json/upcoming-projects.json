@@ -1,121 +1,107 @@
 ﻿{
-	"body":
-	{
-		"color_list":  
-		[
-			{ 
-				"name":"White",  
-				"opacity": 1, 
-				"hex":"000000" 
-			}, 
-			{ 
-				"name":"Isabelline", 
-				"opacity": 1, 
-				"hex":"ede8e4" 
-			}, 
-			{ 
-				"name":"Mint green", 
-				"opacity": 1, 
-				"hex":"d6fff6" 
-			}, 
-			{ 
-				"name":"Celadon", 
-				"opacity": 1, 
-				"hex":"7dcca4" 
-			}, 
-			{ 
-				"name":"Shamrock green", 
-				"opacity": 1, 
-				"hex":"249952" 
-			}, 
-			{ 
-				"name":"Chefchaouen Blue", 
-				"opacity": 1, 
-				"hex":"4a8fe7" 
-			}, 
-			{  
-				"name":"Mikado yellow", 
-				"opacity": 1, 
-				"hex":"ffc634" 
-			}, 
-			{ 
-				"name":"Coral", 
-				"opacity": 1, 
-				"hex":"ff8a5b" 
-			}, 
-			{ 
-				"name":"Persian indigo", 
-				"opacity": 1, 
-				"hex":"360568" 
-			}, 
-			{ 
-				"name":"Dark purple", 
-				"opacity": 1, 
-				"hex":"1f0322" 
-			}, 
-			{ 
-				"name":"Black", 
-				"opacity": 1, 
-				"hex":"FFFFFF" 
-			}  
-		], 
-		"paragraph_font":
-		{ 
+	"body": {
+		"color_list": [
+			{
+				"name": "White",
+				"opacity": 1,
+				"hex": "000000"
+			},
+			{
+				"name": "Isabelline",
+				"opacity": 1,
+				"hex": "ede8e4"
+			},
+			{
+				"name": "Mint green",
+				"opacity": 1,
+				"hex": "d6fff6"
+			},
+			{
+				"name": "Celadon",
+				"opacity": 1,
+				"hex": "7dcca4"
+			},
+			{
+				"name": "Shamrock green",
+				"opacity": 1,
+				"hex": "249952"
+			},
+			{
+				"name": "Chefchaouen Blue",
+				"opacity": 1,
+				"hex": "4a8fe7"
+			},
+			{
+				"name": "Mikado yellow",
+				"opacity": 1,
+				"hex": "ffc634"
+			},
+			{
+				"name": "Coral",
+				"opacity": 1,
+				"hex": "ff8a5b"
+			},
+			{
+				"name": "Persian indigo",
+				"opacity": 1,
+				"hex": "360568"
+			},
+			{
+				"name": "Dark purple",
+				"opacity": 1,
+				"hex": "1f0322"
+			},
+			{
+				"name": "Black",
+				"opacity": 1,
+				"hex": "FFFFFF"
+			}
+		],
+		"paragraph_font": {
 			"family_name": "Roboto",
-			"generic_name": "sans-serif", 
+			"generic_name": "sans-serif",
 			"font_weight": 300
 		},
-		"decoration_font":
-		{ 
+		"decoration_font": {
 			"family_name": "Farsan",
-			"generic_name": "cursive", 
+			"generic_name": "cursive",
 			"font_weight": 400
 		},
-		"header_font":
-		{ 
+		"header_font": {
 			"family_name": "Calligraffitti",
-			"generic_name": "cursive", 
+			"generic_name": "cursive",
 			"font_weight": 400
-		}, 
-		"deco_shape_1":
-		{
+		},
+		"deco_shape_1": {
 			"display": true,
 			"filename": "lg-round-shape.png"
 		},
-		"deco_shape_2":
-		{
+		"deco_shape_2": {
 			"display": true,
 			"filename": "lg-round-shape.png"
 		}
 	},
-	"intro":
-	{
+	"intro": {
 		"intro_traits": "Actor ◈ Playwright ◈ Laugh Coach",
 		"intro_statement": "The funny in the heartbreaking, the truth in the absurd — if you’re going to cry, why not do it in front of an audience?",
-		"btn_primary":
-		{
+		"btn_primary": {
 			"display": true,
 			"text": "Get in Touch",
 			"link": "/contact-me"
 		},
-		"btn_secondary":
-		{
+		"btn_secondary": {
 			"display": true,
 			"text": "Meet the Artist",
-			"link": "/about-me"	
+			"link": "/about-me"
 		},
 		"intro_image": "intro.png"
 	},
-	"header":
-	{
-		"navbar_brand":
-		{
+	"header": {
+		"navbar_brand": {
 			"filename": "logo.png",
 			"link": "/about-me"
-			
 		},
-		"header_content_menu":
-		[
+		"header_content_menu": [
 			{
 				"name": "Home",
 				"link": "/"
@@ -138,13 +124,11 @@
 			}
 		]
 	},
-	"upcoming": 
-	{
+	"upcoming": {
 		"header_text": "Coming Soon...",
 		"para_text": "Upcoming Projects",
 		"button_text": "Tell me More",
-		"list":
-		[
+		"list": [
 			{
 				"odd": true,
 				"title": "To Be Here",
@@ -163,20 +147,17 @@
 			}
 		]
 	},
-	"prior":
-	{
+	"prior": {
 		"header_text": "Previously On…",
 		"para_text": "Selected Works",
 		"button_text": "Show Me More",
-		"videos":
-		[
+		"videos": [
 			{
 				"name": "To Be Here",
 				"link": "tgbNymZ7vqY"
 			}
 		],
-		"images":
-		[
+		"images": [
 			{
 				"number": 1,
 				"display_home": true,
@@ -305,13 +286,11 @@
 			}
 		]
 	},
-	"reviews":
-	{
+	"reviews": {
 		"header_text": "The Reviews Are In!",
 		"para_text": "Click to display selected review",
 		"between_text": "   as  ",
-		"review_content":
-		[
+		"review_content": [
 			{
 				"name": "Peter Filichia",
 				"person_information": "NYC theater critic/ Host of annual Theatre World Awards",
@@ -346,8 +325,7 @@
 			}
 		]
 	},
-	"contact":
-	{
+	"contact": {
 		"form_header": "Fill out this handy form...",
 		"info_header": "...Or contact me directly!",
 		"address": "Arlington, VA - DMV local",
@@ -359,8 +337,7 @@
 		"casting_call_club": "https://cstng.cc/melissashohetacts",
 		"web3forms_apikey": "e8f6aeb7-8178-4717-8b9a-858fa8508183"
 	},
-	"footer":
-	{
+	"footer": {
 		"button_text": "&uarr;Back to Top",
 		"additional_copyright": ""
 	}
