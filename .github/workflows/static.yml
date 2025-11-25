@@ -30,9 +30,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Move docs content to root for GitHub Pages
+      - name: Move docs content to root
+        run: |
+          mv docs/* ./  # Move all files to root directory
       - name: Replace Secrets
         run: |
-          find docs -name "*.html" -type f -exec sed -i "s|JSON_URL|${{ secrets.JSON_URL }}|g" {} +
+          find . -name "*.html" -type f -exec sed -i "s|JSON_URL|${{ secrets.JSON_URL }}|g" {} +
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
