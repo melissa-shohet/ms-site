@@ -29,13 +29,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Replace Secrets
+      - name: Checkout And Replace Secrets
+        uses: actions/checkout@v4
         with: 
           json_url: ${{ secrets.JSON_URL }}
           run: |
             sed -i "s|JSON_URL|::add-mask::json_url|g" index.html
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
