@@ -23,17 +23,17 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
-  deploy: 
-    with:
-      inlineScript: |
-        JSON_URL=${{ secrets.JSON_URL }}
-        echo "::add-mask::$JSON_URL"
-        sed -i "s|JSON_URL|${{ secrets.JSON_URL }}|g" index.html
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Replace Secrets
+        with: 
+          json_url: ${{ secrets.JSON_URL }}
+          run: |
+            sed -i "s|JSON_URL|::add-mask::json_url|g" index.html
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
