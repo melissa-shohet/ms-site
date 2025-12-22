@@ -2,9 +2,8 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting any branch
   push:
-    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +30,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Move docs content to root for GitHub Pages
+      - name: Move docs content to root
+        run: |
+          mv docs/* ./  # Move all files to root directory
+      - name: Replace Secrets
+        run: |
+          find . -name "*.html" -type f -exec sed -i "s|JSON_URL|${{ secrets.JSON_URL }}|g" {} +
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -41,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
